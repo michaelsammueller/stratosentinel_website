@@ -1,0 +1,228 @@
+/* Modern CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Variables */
+:root {
+    --primary-color: #007BFF;
+    --secondary-color: #0A1931;
+    --accent-color: #00F7FF;
+    --text-color: #FFFFFF;
+    --dark-bg: #0A1931;
+    --card-bg: rgba(255, 255, 255, 0.1);
+}
+
+/* Base Styles */
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--dark-bg);
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Particle Background */
+.particles-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, var(--secondary-color), var(--dark-bg));
+    opacity: 0.8;
+    z-index: -1;
+}
+
+/* Header Styles */
+header {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    background: linear-gradient(135deg, rgba(0,123,255,0.1) 0%, rgba(0,247,255,0.1) 100%);
+}
+
+.header-content {
+    padding: 2rem;
+}
+
+h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    color: var(--accent-color);
+    text-shadow: 0 0 10px rgba(0,247,255,0.5);
+}
+
+.tagline {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: var(--accent-color);
+    margin-bottom: 2rem;
+}
+
+/* Button Styles */
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 30px;
+    background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,247,255,0.3);
+}
+
+/* Section Styles */
+section {
+    padding: 100px 0;
+}
+
+.dark-section {
+    background-color: rgba(10, 25, 49, 0.8);
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--accent-color);
+}
+
+/* Grid Layouts */
+.feature-grid, .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+/* Card Styles */
+.feature-card, .benefit-item {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover, .benefit-item:hover {
+    transform: translateY(-5px);
+}
+
+/* Icon Styles */
+.fas {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--accent-color);
+}
+
+/* Footer */
+footer {
+    background-color: rgba(0,0,0,0.5);
+    padding: 20px 0;
+    text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    .tagline {
+        font-size: 1.5rem;
+    }
+    
+    section {
+        padding: 60px 0;
+    }
+}
+
+.particle {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background-color: var(--accent-color);
+    opacity: 0;
+    pointer-events: none;
+    animation: float 3s ease-in infinite;
+    box-shadow: 0 0 10px var(--accent-color);
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(100vh) translateX(-10px);
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(-100px) translateX(100px);
+        opacity: 0;
+    }
+}
+
+/* Add fade-in animation for sections */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Contact Section Styles */
+#contact {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+#contact .container {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+#contact p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: var(--text-color);
+}
+
+#contact .cta-button {
+    margin: 0 auto;
+    display: inline-flex;
+    min-width: 200px;
+    justify-content: center;
+}
