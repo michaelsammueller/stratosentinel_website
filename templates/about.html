@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block title %}About Us{% endblock %}
+
+{% block content %}
+<header>
+    <div class="header-content">
+        <h1>
+            <img src="{{ url_for('static', filename='images/strato.svg') }}" alt="StratoSentinel Logo" class="header-logo">
+            <span>StratoSentinel</span>
+        </h1>
+        <p class="tagline">Securing the Future of Aviation</p>
+        <p class="subtitle">Leading the revolution in GPS security technology</p>
+    </div>
+</header>
+
+<section id="mission">
+    <div class="container">
+        <h2><i class="fas fa-bullseye"></i> Our Mission</h2>
+        <div class="mission-content">
+            <p class="mission-text">
+                At StratoSentinel, we're dedicated to protecting aviation navigation systems 
+                from emerging threats. Our team of experts combines decades of experience in 
+                aerospace security with cutting-edge technology to create innovative solutions 
+                for the modern aviation industry.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section id="team" class="dark-section">
+    <div class="container">
+        <h2><i class="fas fa-users"></i> Our Team</h2>
+        <div class="team-grid">
+            <div class="team-card">
+                <div class="team-icon">
+                    <i class="fas fa-user-shield"></i>
+                </div>
+                <h3>Security Experts</h3>
+                <p>Industry-leading cybersecurity specialists focused on aviation security</p>
+            </div>
+            
+            <div class="team-card">
+                <div class="team-icon">
+                    <i class="fas fa-plane"></i>
+                </div>
+                <h3>Aviation Specialists</h3>
+                <p>Experienced pilots and aviation industry professionals</p>
+            </div>
+            
+            <div class="team-card">
+                <div class="team-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <h3>Engineers</h3>
+                <p>Innovative software and hardware engineers pushing technological boundaries</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <div class="container">
+        <h2><i class="fas fa-paper-plane"></i> Connect With Us</h2>
+        <p>Want to learn more about our mission and team? Get in touch.</p>
+        <a href="mailto:contact@stratosentinel.com" class="cta-button">
+            <i class="fas fa-envelope"></i>
+            <span>Contact Us</span>
+        </a>
+    </div>
+</section>
+{% endblock %}

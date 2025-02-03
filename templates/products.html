@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block title %}Products{% endblock %}
+
+{% block content %}
+<header>
+    <div class="header-content">
+        <h1><i class="fas fa-satellite"></i> Our Products</h1>
+        <p class="tagline">Next-Generation Navigation Security</p>
+        <p class="subtitle">Protecting aviation assets with cutting-edge technology</p>
+    </div>
+</header>
+
+<section id="products">
+    <div class="container">
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-icon">
+                    <i class="fas fa-satellite-dish"></i>
+                </div>
+                <h3>StratoNomad GPS</h3>
+                <p>Advanced GPS receiver with built-in anti-spoofing technology</p>
+                <ul class="feature-list">
+                    <li><i class="fas fa-check"></i> Real-time threat detection</li>
+                    <li><i class="fas fa-check"></i> Real-time spoofing mitigation & recovery </li>
+                    <li><i class="fas fa-check"></i> Multi-constellation support</li>
+                </ul>
+                <a href="#contact" class="cta-button">
+                    <span>Learn More</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <div class="product-card">
+                <div class="product-icon">
+                    <i class="fas fa-network-wired"></i>
+                </div>
+                <h3>AeroMesh Protocol</h3>
+                <p>Decentralized aircraft-to-aircraft secure navigation network</p>
+                <ul class="feature-list">
+                    <li><i class="fas fa-check"></i> Peer-to-peer verification</li>
+                    <li><i class="fas fa-check"></i> Military-grade encryption</li>
+                    <li><i class="fas fa-check"></i> Redundant positioning</li>
+                </ul>
+                <a href="#contact" class="cta-button">
+                    <span>Learn More</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="dark-section">
+    <div class="container">
+        <h2><i class="fas fa-paper-plane"></i> Get Product Information</h2>
+        <p>Interested in our aviation security solutions? Contact us today.</p>
+        <a href="mailto:contact@stratosentinel.com" class="cta-button">
+            <i class="fas fa-envelope"></i>
+            <span>Contact Us</span>
+        </a>
+    </div>
+</section>
+{% endblock %}

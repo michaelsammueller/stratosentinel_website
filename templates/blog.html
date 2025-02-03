@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}Blog{% endblock %}
+
+{% block content %}
+<header>
+    <div class="header-content">
+        <h1><i class="fas fa-newspaper"></i> Blog</h1>
+        <p class="tagline">Latest Updates & Insights</p>
+        <p class="subtitle">News and developments in aviation security</p>
+    </div>
+</header>
+
+<section id="blog-posts">
+    <div class="container">
+        <div class="post-grid">
+            {% for post in posts %}
+            <article class="post-card">
+                <div class="post-meta">
+                    <span class="post-date"><i class="fas fa-calendar"></i> {{ post.date }}</span>
+                    {% if post.author %}
+                    <span class="post-author"><i class="fas fa-user"></i> {{ post.author }}</span>
+                    {% endif %}
+                </div>
+                <h2 class="post-title">{{ post.title }}</h2>
+                <p class="post-excerpt">{{ post.excerpt }}</p>
+                <a href="{{ url_for('post', slug=post.slug) }}" class="cta-button">
+                    <span>Read More</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </article>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}

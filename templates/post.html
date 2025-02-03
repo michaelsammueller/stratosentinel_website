@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}{{ post.title }}{% endblock %}
+
+{% block content %}
+<header>
+    <div class="header-content">
+        <h1>{{ post.title }}</h1>
+        <div class="post-meta">
+            <span class="post-date"><i class="fas fa-calendar"></i> {{ post.date }}</span>
+            {% if post.author %}
+            <span class="post-author"><i class="fas fa-user"></i> {{ post.author }}</span>
+            {% endif %}
+        </div>
+    </div>
+</header>
+
+<section id="post-content">
+    <div class="container">
+        <article class="blog-post">
+            {{ post.content|safe }}
+        </article>
+        <div class="post-navigation">
+            <a href="{{ url_for('blog') }}" class="cta-button">
+                <i class="fas fa-arrow-left"></i>
+                <span>Back to Blog</span>
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}

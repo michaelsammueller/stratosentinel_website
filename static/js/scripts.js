@@ -59,4 +59,51 @@ document.addEventListener("DOMContentLoaded", function () {
         section.classList.add('fade-in');
         observer.observe(section);
     });
+
+    // Navigation scroll behavior
+    let lastScrollTop = 0;
+    const nav = document.querySelector('.main-nav');
+    const scrollThreshold = 100; // Amount of scroll before hiding nav
+    
+    function handleNavigation() {
+        const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+        
+        // Show nav when at the top
+        if (currentScroll <= 0) {
+            nav.style.transform = 'translate(-50%, 0)';
+            nav.style.opacity = '1';
+            return;
+        }
+        
+        // Only handle scroll events beyond threshold
+        if (Math.abs(lastScrollTop - currentScroll) <= scrollThreshold) return;
+        
+        // Scrolling down & past threshold
+        if (currentScroll > lastScrollTop && currentScroll > scrollThreshold) {
+            nav.style.transform = 'translate(-50%, -100%)';
+            nav.style.opacity = '0';
+        }
+        // Scrolling up
+        else {
+            nav.style.transform = 'translate(-50%, 0)';
+            nav.style.opacity = '1';
+        }
+        
+        lastScrollTop = currentScroll;
+    }
+    
+    // Add smooth transitions to the nav
+    nav.style.transition = 'transform 0.3s ease, opacity 0.3s ease';
+    
+    // Throttle scroll events for better performance
+    let ticking = false;
+    document.addEventListener('scroll', function() {
+        if (!ticking) {
+            window.requestAnimationFrame(function() {
+                handleNavigation();
+                ticking = false;
+            });
+            ticking = true;
+        }
+    });
 });

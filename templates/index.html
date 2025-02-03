@@ -10,9 +10,27 @@
 <body>
     <div class="particles-bg"></div>
     
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="{{ url_for('static', filename='images/strato.svg') }}" alt="StratoSentinel Logo" class="nav-logo">
+                <span>StratoSentinel</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/" class="active">Home</a></li>
+                <li><a href="/products">Products</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="/about">About Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
     <header>
         <div class="header-content">
-            <h1><i class="fas fa-shield-alt"></i> StratoSentinel</h1>
+            <h1>
+                <img src="{{ url_for('static', filename='images/strato.svg') }}" alt="StratoSentinel Logo" class="header-logo">
+                <span>StratoSentinel</span>
+            </h1>
             <p class="tagline">Securing Skies, Defending Navigation.</p>
             <p class="subtitle">Advanced GPS protection for modern aviation</p>
             <a href="#contact" class="cta-button">
