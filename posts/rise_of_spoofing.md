@@ -1,10 +1,8 @@
 ---
-layout: post
 title: "The Rise of GPS Spoofing: A Growing Threat in the Last 3 Years"
+date: 08/02/2025
 author: Michael Sammueller
-date: 2025-02-08
-categories: [GPS, Cybersecurity, Aviation Safety]
-tags: [GPS Spoofing, Aviation, Cyber Threats]
+excerpt: GPS spoofing is no longer a theoretical threat; it’s a reality that demands attention. The rise in spoofing incidents over the past three years underscores the vulnerabilities of unprotected systems and the urgent need for innovative solutions.
 ---
 
 ### **What is GPS Spoofing?**
