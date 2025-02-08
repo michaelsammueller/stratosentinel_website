@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}StratoSentinel{% endblock %} | Securing Skies - Defending Navigation</title>
+    <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='images/strato.svg') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -16,6 +17,26 @@
                 <img src="{{ url_for('static', filename='images/strato.svg') }}" alt="StratoSentinel Logo" class="nav-logo">
                 <span>StratoSentinel</span>
             </div>
+            <ul class="nav-links">
+                <li><a href="/" {% if request.path == '/' %}class="active"{% endif %}>Home</a></li>
+                <li><a href="/products" {% if request.path == '/products' %}class="active"{% endif %}>Products</a></li>
+                <li><a href="/blog" {% if request.path == '/blog' %}class="active"{% endif %}>Blog</a></li>
+                <li><a href="/about" {% if request.path == '/about' %}class="active"{% endif %}>About Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <nav class="mobile-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="{{ url_for('static', filename='images/strato.svg') }}" alt="StratoSentinel Logo" class="nav-logo">
+                <span>StratoSentinel</span>
+            </div>
+            <button class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <div class="mobile-menu">
             <ul class="nav-links">
                 <li><a href="/" {% if request.path == '/' %}class="active"{% endif %}>Home</a></li>
                 <li><a href="/products" {% if request.path == '/products' %}class="active"{% endif %}>Products</a></li>
